@@ -4,10 +4,10 @@ import { PriceData } from '../types';
 const BIRDEYE_API_BASE = 'https://public-api.birdeye.so';
 const BIRDEYE_API_KEY = import.meta.env.VITE_BIRDEYE_API_KEY;
 
-// Token addresses - using the correct Solana token addresses
+// Token addresses - using environment variables with fallbacks
 const TOKENS = {
-  SOL: 'So11111111111111111111111111111111111111112',
-  BONK: 'DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263'
+  SOL: import.meta.env.VITE_SOL_TOKEN_ADDRESS,
+  BONK: import.meta.env.VITE_BONK_TOKEN_ADDRESS 
 };
 
 // Global request manager to prevent multiple instances from making simultaneous calls
